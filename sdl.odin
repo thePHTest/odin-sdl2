@@ -1,7 +1,7 @@
 package sdl
 
 import "core:os"
-import vk "../../vulkan_gen/vulkan/"
+// import vk "../../vulkan_gen/vulkan/"
 
 when os.OS == "windows" do foreign import lib "SDL2.lib";
 when os.OS == "linux" do foreign import lib "system:SDL2";
@@ -494,12 +494,12 @@ foreign lib {
 	@(link_name="SDL_UpperBlitScaled") upper_blit_scaled :: proc(src: ^Surface, srcrect: ^Rect, dst: ^Surface, dstrect: ^Rect) -> i32																					---;
 	@(link_name="SDL_VideoInit") video_init :: proc(driver_name: cstring) -> i32																																---;
 	@(link_name="SDL_VideoQuit") video_quit :: proc()																																						---;
-	@(link_name="SDL_Vulkan_CreateSurface") vulkan_create_surface :: proc(window: ^Window, instance: vk.Instance, surface: ^vk.SurfaceKHR) -> Bool																																---;
+	// @(link_name="SDL_Vulkan_CreateSurface") vulkan_create_surface :: proc(window: ^Window, instance: vk.Instance, surface: ^vk.SurfaceKHR) -> Bool																																---;
     
-	@(link_name="SDL_Vulkan_GetDrawableSize") vulkan_get_drawable_size :: proc(window: ^Window, w, h: ^i32)																																---;
-	@(link_name="SDL_Vulkan_GetVkGetInstanceProcAddr") vulkan_get_gk_get_instance_proc_addr :: proc() -> rawptr																															---;
-	@(link_name="SDL_Vulkan_GetInstanceExtensions") vulkan_get_instance_extensions :: proc(window: ^Window, pCount: ^u32, pNames: ^cstring) -> i32																																---;
-	@(link_name="SDL_Vulkan_LoadLibrary") vulkan_load_library :: proc(path: cstring) -> i32																																---;
+	// @(link_name="SDL_Vulkan_GetDrawableSize") vulkan_get_drawable_size :: proc(window: ^Window, w, h: ^i32)																																---;
+	// @(link_name="SDL_Vulkan_GetVkGetInstanceProcAddr") vulkan_get_gk_get_instance_proc_addr :: proc() -> rawptr																															---;
+	// @(link_name="SDL_Vulkan_GetInstanceExtensions") vulkan_get_instance_extensions :: proc(window: ^Window, pCount: ^u32, pNames: ^cstring) -> i32																																---;
+	// @(link_name="SDL_Vulkan_LoadLibrary") vulkan_load_library :: proc(path: cstring) -> i32																																---;
     
 	@(link_name="SDL_WaitEvent") wait_event :: proc(event: ^Event) -> i32																																	---;
 	@(link_name="SDL_WaitEventTimeout") wait_event_timeout :: proc(event: ^Event, timeout: i32) -> i32																														---;
